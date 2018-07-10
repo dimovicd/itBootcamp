@@ -13,9 +13,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Checkbox {
 
-	private static final String BASE_URL = "https://the-internet.herokuapp.com/";
-	private static final int TIMEOUT = 5;
-	private static WebDriver driver;
+	public static final String BASE_URL = "https://the-internet.herokuapp.com/";
+	public static final int TIMEOUT = 5;
+	public static WebDriver driver;
 	public static void sleep(int seconds) {
 		int milliseconds = seconds * 1000;
         try {
@@ -28,7 +28,7 @@ public class Checkbox {
 	
 	@BeforeClass
 	public static void setChromedriver() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver");
 		driver = new ChromeDriver();
 	}
 	
@@ -48,9 +48,13 @@ public class Checkbox {
     public void byIndex() {
     	
     	List<WebElement> options = driver.findElements(By.cssSelector("#checkboxes input"));
-    	options.get(0).click();
+    	options.get(1).click();
     	sleep(TIMEOUT);
 
-    	
     }
+
+    	
+    	
+ 
+    	
 }
