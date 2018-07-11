@@ -3,7 +3,6 @@ package itbootcampWaitTypes;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,8 +22,6 @@ public class ExplicitWaitExamples {
 	            e.printStackTrace();
 	        }
 	    }
-
-//	    ELEMENT RELATED
 
 	 public void click(By selector) {
 		 WebDriverWait wait = new WebDriverWait(driver, 10);

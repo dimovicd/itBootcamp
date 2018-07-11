@@ -9,9 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import twitterPageObjectModel.LoginPage;
 import twitterPageObjectModel.HomePage;
 import twitterPageObjectModel.ProfilePage;
+import utils.Util;
 import twitterPageObjectModel.Browser;
 
-public class Profile {
+public class ProfileTest {
 	
 	public static LoginPage login;
 	public static HomePage home;
@@ -22,15 +23,15 @@ public class Profile {
 	
 	public static final int TIMEOUT = 5;
 	public static final String BASE_URL = "https://twitter.com/";
-	public static final String EMAIL = "Dukaqa@gmail.com";
-	public static final String PASSWORD = "kursadzijebootcamp";
+	public static final String EMAIL = Util.username;
+	public static final String PASSWORD = Util.password;
 	public static final String USERNAME = "kursadzije2";
 	public static final String FULL_NAME = "kursadzije";
 
 	@BeforeClass
 	public static void setUp() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver");
-        driver = new ChromeDriver();
+		driver = new ChromeDriver();
         home = new HomePage(driver);
         login = new LoginPage(driver);
         browser = new Browser(driver);
@@ -40,7 +41,7 @@ public class Profile {
 	
 	@Before
 	public void logIn() {
-		browser.navigate(BASE_URL);
+		browser.navigate(BASE_URL + "login");
         login.logMeIn(EMAIL, PASSWORD);
 	}
 	
